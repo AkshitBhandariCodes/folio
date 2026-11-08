@@ -1,0 +1,37 @@
+:root {
+  --guide: #343434;
+  --guide-cross: #646464;
+}
+:root.light {
+  --guide: #b8ad9c;
+  --guide-cross: #8d8170;
+}
+body { overflow-x: clip; }
+.profile-shell, .brief-shell { border-inline: 1px dashed var(--guide); }
+.page-divider { position: relative; }
+.page-divider::before,
+.page-divider::after {
+  position: absolute;
+  top: 0;
+  content: '';
+  pointer-events: none;
+}
+.page-divider::before {
+  left: 50%;
+  width: 100vw;
+  height: 1px;
+  background: repeating-linear-gradient(to right, var(--guide) 0 4px, transparent 4px 9px);
+  transform: translateX(-50%);
+  opacity: var(--rule-opacity, 1);
+}
+.page-divider::after {
+  inset-inline: -5px;
+  height: 9px;
+  transform: translateY(-4px);
+  background:
+    linear-gradient(var(--guide-cross), var(--guide-cross)) left center / 9px 1px,
+    linear-gradient(var(--guide-cross), var(--guide-cross)) 4px center / 1px 9px,
+    linear-gradient(var(--guide-cross), var(--guide-cross)) right center / 9px 1px,
+    linear-gradient(var(--guide-cross), var(--guide-cross)) calc(100% - 4px) center / 1px 9px;
+  background-repeat: no-repeat;
+}

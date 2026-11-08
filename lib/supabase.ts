@@ -1,0 +1,5 @@
+import { createClient, type SupabaseClient } from '@supabase/supabase-js';
+type GuestbookRow={id:string;user_id:string|null;name:string;email:string;avatar_url:string|null;message:string;status:string;created_at:string;approved_at:string|null};
+type Database={public:{Tables:{guestbook_messages:{Row:GuestbookRow;Insert:{id?:string;user_id:string;name:string;email:string;avatar_url?:string|null;message:string;status?:string;created_at?:string;approved_at?:string|null};Update:Partial<GuestbookRow>;Relationships:[]}};Views:Record<string,never>;Functions:{current_user_is_admin:{Args:Record<string,never>;Returns:boolean}};Enums:Record<string,never>;CompositeTypes:Record<string,never>}};
+let client:SupabaseClient<Database>|null=null;
+export function getSupabase(){const url=process.env.NEXT_PUBLIC_SUPABASE_URL;const key=process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;if(!url||!key)return null;if(!client)client=createClient<Database>(url,key,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});return client}
