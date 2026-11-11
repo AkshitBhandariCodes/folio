@@ -23,6 +23,7 @@
 .toolbar-avatar { width: 28px; height: 28px; flex: none; object-fit: cover; border: 1px solid var(--border); border-radius: 5px; }
 .toolbar-shortcuts { display: flex; gap: 16px; margin-left: auto; color: var(--muted); }
 .toolbar-shortcuts a { display: inline-flex; align-items: center; gap: 4px; }
+.toolbar-shortcuts .toolbar-mobile-link { display: none; }
 .toolbar-shortcuts a:hover, .toolbar-home:hover { color: var(--accent); }
 .profile-tools { display: flex; align-items: center; gap: 6px; position: absolute; right: 12px; top: 9px; }
 .profile-tools button, .mobile-index {
@@ -385,6 +386,29 @@ body > .profile-tools { top: 13px; right: 13px; }
 }
 @media (max-width: 650px) {
   .profile-shell, .brief-shell { --gutter: 15px; width: calc(100% - 20px); margin-top: 10px; }
+  .site-toolbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 10px 12px;
+    padding: 12px var(--gutter) 9px;
+  }
+  .site-toolbar .toolbar-home { grid-column: 2; grid-row: 1; display: grid; justify-items: center; gap: 5px; font-size: 10px; }
+  .site-toolbar .toolbar-avatar { width: 40px; height: 40px; }
+  .site-toolbar .profile-tools { display: contents; }
+  .site-toolbar .profile-tools button { grid-row: 1; align-self: start; width: 44px; min-height: 40px; }
+  .site-toolbar .command-trigger { grid-column: 1; justify-self: end; }
+  .site-toolbar .theme-trigger { grid-column: 3; justify-self: start; }
+  .toolbar-shortcuts { grid-column: 1 / -1; grid-row: 2; justify-content: center; margin: 0; }
+  .toolbar-sections {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2px 5px;
+    padding-top: 4px;
+    border-top: 1px dashed var(--guide);
+  }
+  .toolbar-sections a { justify-content: center; min-height: 34px; padding: 3px 4px; border-radius: 4px; text-align: center; }
+  .toolbar-sections a:is(:hover, :focus-visible) { color: var(--ink); background: var(--raised); }
+  .toolbar-sections .toolbar-mobile-link { display: inline-flex; }
   .profile-identity { gap: 9px 10px; }
   .portrait-frame { width: 72px; height: 72px; margin-top: -28px; }
   .visitor-badge { font-size: 8px; }
@@ -394,9 +418,6 @@ body > .profile-tools { top: 13px; right: 13px; }
   .job-heading .job-dates { font-size: 9px; }
 }
 @media (max-width: 520px) {
-  .site-toolbar { padding-left: 9px; padding-right: 89px; gap: 8px; }
-  .profile-tools { right: 7px; }
-  .toolbar-shortcuts { gap: 8px; }
   .project-rows { grid-template-columns: minmax(0, 1fr); }
   .profile-identity { grid-template-columns: auto minmax(0,1fr); }
   .visitor-badge { grid-column: 2; justify-self: start; }
@@ -412,10 +433,4 @@ body > .profile-tools { top: 13px; right: 13px; }
 @media (prefers-reduced-motion: reduce) {
    .identity-text, .portrait-frame { animation: none; }
   .project-image-link:hover .project-window, .project-image-link:focus-visible .project-window { transform: none; }
-}
-
-@media (max-width: 455px) {
-  .site-toolbar { flex-wrap: wrap; row-gap: 3px; }
-  .toolbar-home { gap: 6px; font-size: 10px; }
-  .toolbar-shortcuts { flex-basis: 100%; gap: 12px; margin-left: 0; padding-left: 34px; }
 }

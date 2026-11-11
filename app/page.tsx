@@ -34,8 +34,15 @@ export default function Home() {
       <main id="main" className="profile-shell">
         <div className="site-toolbar">
           <PortfolioBrand home />
-          <div className="toolbar-shortcuts"><a href="#work">Work</a><a href="/resume.pdf" target="_blank" rel="noreferrer">Résumé</a></div>
           <Navigation />
+          <nav className="toolbar-shortcuts toolbar-sections" aria-label="Portfolio shortcuts">
+            <a href="#work">Work</a>
+            <a href="#experience" className="toolbar-mobile-link">Experience</a>
+            <a href="#open-source" className="toolbar-mobile-link">Open source</a>
+            <a href="#skills" className="toolbar-mobile-link">Toolbox</a>
+            <a href="#guestbook" className="toolbar-mobile-link">Guestbook</a>
+            <a href="/resume.pdf" target="_blank" rel="noreferrer">Résumé</a>
+          </nav>
         </div>
         <ProfileBanner />
         <header className="profile-hero">

@@ -29,7 +29,6 @@ out/
 next-env.d.ts
 *.tsbuildinfo
 .env*
-!.env.example
 .qa/
 .vercel/
 
