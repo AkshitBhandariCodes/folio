@@ -32,17 +32,19 @@ export default function Home() {
       <a className="skip-link" href="#main">Skip to content</a>
       <div id="top" />
       <main id="main" className="profile-shell">
-        <div className="site-toolbar">
-          <PortfolioBrand home />
+        <div className="site-toolbar home-toolbar">
+          <div className="toolbar-identity">
+            <PortfolioBrand home />
+            <nav className="toolbar-shortcuts" aria-label="Portfolio shortcuts">
+              <a href="#work">Work</a>
+              <a href="/resume.pdf" target="_blank" rel="noreferrer">Résumé</a>
+              <a href="#experience">Experience</a>
+              <a href="#open-source">Open source</a>
+              <a href="#skills">Toolbox</a>
+              <a href="#guestbook">Guestbook</a>
+            </nav>
+          </div>
           <Navigation />
-          <nav className="toolbar-shortcuts toolbar-sections" aria-label="Portfolio shortcuts">
-            <a href="#work">Work</a>
-            <a href="#experience" className="toolbar-mobile-link">Experience</a>
-            <a href="#open-source" className="toolbar-mobile-link">Open source</a>
-            <a href="#skills" className="toolbar-mobile-link">Toolbox</a>
-            <a href="#guestbook" className="toolbar-mobile-link">Guestbook</a>
-            <a href="/resume.pdf" target="_blank" rel="noreferrer">Résumé</a>
-          </nav>
         </div>
         <ProfileBanner />
         <header className="profile-hero">
