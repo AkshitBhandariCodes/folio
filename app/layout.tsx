@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
 import { MotionProvider } from '@/components/motion-provider';
 import { CatCursor } from '@/components/cat-cursor';
 import { VisitorPresence } from '@/components/visitor-badge';
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <VisitorPresence>{children}</VisitorPresence>
           <CatCursor />
         </MotionProvider>
+        <Analytics />
       </body>
     </html>
   );
