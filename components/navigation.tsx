@@ -11,7 +11,7 @@ const homeSections = [
   ['open-source', 'Open source'], ['activity', 'GitHub activity'], ['skills', 'Toolbox'],
   ['guestbook', 'Guestbook'], ['contact', 'Contact'],
 ];
-const projectSections = [['overview', 'Overview'], ['preview', 'Product preview'], ['challenges', 'Challenges faced']];
+const projectSections = [['preview', 'Product'], ['stack', 'How I used the stack'], ['challenges', 'Engineering decisions']];
 const resumeSections = [
   ['education', 'Education'], ['experience', 'Experience'], ['open-source', 'Open source'],
   ['work', 'Technical projects'], ['skills', 'Technical skills'], ['achievements', 'Achievements'],

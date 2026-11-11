@@ -1,4 +1,13 @@
-import { ImageResponse } from 'next/og';
-export const alt='Akshit Bhandari — Software engineer. Products, systems, and the decisions behind them.';
-export const size={width:1200,height:630};export const contentType='image/png';
-export default function Image(){return new ImageResponse(<div style={{background:'#050505',color:'#ededee',width:'100%',height:'100%',display:'flex',flexDirection:'column',justifyContent:'center',padding:'80px',border:'1px solid #242427'}}><span style={{fontSize:18,color:'#74747e',letterSpacing:3}}>SOFTWARE ENGINEER / PRODUCT BUILDER</span><span style={{fontSize:80,fontWeight:700,letterSpacing:-4,marginTop:25}}>Akshit Bhandari</span><span style={{fontSize:28,color:'#a2a2ae',marginTop:24}}>Products, systems, and the decisions behind them.</span><span style={{fontSize:20,color:'#666674',marginTop:70}}>akshitbhandari.codes</span></div>,size)}
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+
+export const alt = 'Akshit Bhandari, full-stack software engineer, with his pixel mascot above a dithered moon.';
+export const size = { width: 1200, height: 630 };
+export const contentType = 'image/png';
+
+export default async function Image() {
+  const image = await readFile(join(process.cwd(), 'public', 'images', 'og-portfolio.png'));
+  return new Response(new Uint8Array(image), {
+    headers: { 'Content-Type': contentType },
+  });
+}

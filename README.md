@@ -38,7 +38,7 @@ Run `supabase/portfolio-visitors.sql` in the existing Supabase project to enable
 
 The banner loops the existing Kohli signing clip in monochrome with a pointer-controlled color spotlight. The web résumé and /llms.txt share the transcription of the original PDF. The optional SnipWise launch film comes from the owner's `snipwise-launch-video` project. Project screenshots and marks come from the actual sites and repositories. The profile uses the owner’s supplied illustrated portrait.
 
-SnipWise's narrative follows the current `PROJECT.md` and beta release notes, not the stale extension writeup. Sync design remains distinguished from the current Windows beta. Push2Prod follows the newer current-state docs, with EKS/SQS deployment work marked as planned. Deviators follows the schema, handlers, and event notes without unverified uptime claims.
+SnipWise’s case study covers Windows v1 and draws on `PROJECT.md`, the native agent, and the installer release workflow. Push2Prod follows the newer current-state docs, with EKS/SQS deployment work marked as planned. Deviators follows the schema, handlers, and event notes without unverified uptime claims.
 
 The macOS-style portfolio lives in the separate [Portfolio repository](https://github.com/AkshitBhandariCodes/Portfolio).
 

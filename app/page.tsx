@@ -4,9 +4,7 @@ import { OpenSourceContributions } from '@/components/open-source-contributions'
 import { Navigation } from '@/components/navigation';
 import { PortfolioBrand } from '@/components/portfolio-brand';
 import { ProfileBanner } from '@/components/profile-banner';
-import { PageSideline } from '@/components/page-sideline';
-import { SidelineTree } from '@/components/sideline-tree';
-import { SportsEquipment } from '@/components/sports-sidelines';
+import { PageSideline, SidelineSticker } from '@/components/page-sideline';
 import { Footer } from '@/components/footer';
 import { Guestbook } from '@/components/guestbook';
 import { GitHubActivity } from '@/components/github-activity';
@@ -41,21 +39,31 @@ export default function Home() {
         </div>
         <ProfileBanner />
         <header className="profile-hero">
-          <SidelineTree />
+          <PageSideline side="right" note={{ href: '#work', text: 'see what I shipped' }}>
+            <SidelineSticker kind="pull" />
+          </PageSideline>
           <div className="profile-identity">
             <div className="portrait-frame">
               <Image src="/images/profile-illustration.png" width={104} height={104} sizes="(max-width: 650px) 72px, 98px" alt="Akshit Bhandari" priority />
               <span className="portrait-glint" aria-hidden="true" />
             </div>
             <div className="identity-text">
-              <span className="mini-label">SOFTWARE ENGINEER / BUILDER</span>
+              <span className="mini-label">FULL-STACK SOFTWARE ENGINEER</span>
               <h1>Akshit Bhandari</h1>
               <p><MapPin size={13} /> New Delhi, India</p>
             </div>
             <VisitorBadge />
           </div>
           <div className="hero-intro">
-            <p>I build the <strong>parts people interact with</strong> and the systems that keep them working. Right now that means a <strong>Windows clipboard app</strong>, a <strong>deployment platform</strong>, and software for a developer community.</p>
+            <p>
+              I’m a full-stack developer interested in <strong>backend systems, cloud infrastructure, and desktop software</strong>.
+              Lately I’ve been building a Windows clipboard app in Go and a platform that deploys projects straight from Git.
+              I also contribute to open source and lead Deviators Club, where we run hackathons and coding events.
+            </p>
+            <p>
+              I was a <strong>finalist at the Innovate4FinLit national hackathon</strong> with a gamified financial literacy app.
+              I’ve also built client web apps at Webdesino.
+            </p>
             <nav className="hero-actions" aria-label="Social profiles">
               <a href="https://github.com/AkshitBhandariCodes" className="mini-button social-github" target="_blank" rel="noreferrer"><Github size={15} /> GitHub</a>
               <a href="https://www.linkedin.com/in/akshitbhandaricodes" className="mini-button social-linkedin" target="_blank" rel="noreferrer"><Linkedin size={14} /> LinkedIn</a>
@@ -71,8 +79,7 @@ export default function Home() {
         </header>
 
         <section id="work" className="portfolio-section page-divider">
-          <PageSideline side="left" note={{ href: '#work', text: 'see what I shipped' }}><SportsEquipment sport="cricket" /></PageSideline>
-          <div data-scroll-reveal className="section-heading"><span>01 / SELECTED WORK</span><h2>Projects</h2><p>What I built, what got tricky, and how I handled it.</p></div>
+          <div data-scroll-reveal className="section-heading"><span>01 / SELECTED WORK</span><h2>Projects</h2></div>
           <SelectedProjects />
         </section>
 
@@ -85,7 +92,9 @@ export default function Home() {
         </section>
 
         <section id="open-source" className="portfolio-section page-divider">
-          <PageSideline side="right" note={{ href: '#open-source', text: 'read the patches' }}><SportsEquipment sport="football" /></PageSideline>
+          <PageSideline side="right" note={{ href: '#open-source', text: 'read the patches' }}>
+            <SidelineSticker kind="review" />
+          </PageSideline>
           <div data-scroll-reveal className="section-heading"><span>03 / CONTRIBUTIONS</span><h2>Open source</h2></div>
           <OpenSourceContributions />
         </section>
@@ -97,7 +106,7 @@ export default function Home() {
 
         <section id="skills" className="portfolio-section page-divider">
           <PageSideline side="left" note={{ href: '#skills', text: 'open the toolbox' }}>
-            <SportsEquipment sport="badminton" />
+            <SidelineSticker kind="terminal" />
           </PageSideline>
           <div data-scroll-reveal className="section-heading"><span>05 / TOOLS I USE</span><h2>Toolbox</h2></div>
           <div className="toolbox">
