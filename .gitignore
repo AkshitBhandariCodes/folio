@@ -33,6 +33,9 @@ next-env.d.ts
 .qa/
 .vercel/
 
+# Local database scripts
+/supabase/
+
 # Local archive from the previous portfolio
 /eslint.config.js
 /hooks/
